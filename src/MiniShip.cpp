@@ -75,7 +75,13 @@ int main(int argc, char* argv[]) {
 
 
 void MiniShip::onRender() {
-	applySurface(0, 0, background, screen);
+	if (backposition.y + SCROLL_OFSSET < 0) {
+		backposition.y += SCROLL_OFSSET;
+	}
+	else {
+		backposition.y = -480;
+	}
+	applySurface(backposition.x, backposition.y, background, screen);
 	applySurface(spritePosition.x, spritePosition.y, sprite, screen);
     SDL_Flip(screen);
 }

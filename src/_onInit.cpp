@@ -19,8 +19,10 @@ bool MiniShip::onInit() {
     }
 	SDL_WM_SetCaption("miniship", NULL);
 	background = loadImage("background.bmp");
+	backposition.x = 0;
+	backposition.y = -480;
 	sprite = loadImage("miniship.bmp");
-	spritePosition.x=390;
-	spritePosition.y=225;
+	spritePosition.x = 390;
+	spritePosition.y = 225;
 	return true;
 }
